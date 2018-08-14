@@ -1,4 +1,4 @@
-<?php                                                                                                                                                                                                                                 [36/299]
+<?php
 /**
  * The base configuration for WordPress
  *
@@ -18,24 +18,24 @@
  * @package WordPress
  */
 
-// ** MySQL settings ** //                                                                                                                                                                                                             [4/333]
+// ** MySQL settings ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', $_ENV['WORDPRESS_DB_NAME'] );
+define( 'DB_NAME', getenv('WORDPRESS_DB_NAME') );
 
 /** MySQL database username */
-define( 'DB_USER', $_ENV['WORDPRESS_DB_USER'] );
+define( 'DB_USER', getenv('WORDPRESS_DB_USER') );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', $_ENV['WORDPRESS_DB_PASSWORD'] );
+define( 'DB_PASSWORD', getenv('WORDPRESS_DB_PASSWORD') );
 
 /** MySQL hostname */
-define( 'DB_HOST', $_ENV['WORDPRESS_DB_HOST'] );
+define( 'DB_HOST', getenv('WORDPRESS_DB_HOST') );
 
 /** Database Charset to use in creating database tables. */
-define( 'DB_CHARSET', $_ENV['WORDPRESS_DB_CHARSET'] );
+define( 'DB_CHARSET', getenv('WORDPRESS_DB_CHARSET') );
 
 /** The Database Collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', $_ENV['WORDPRESS_DB_COLLATE'] );
+define( 'DB_COLLATE', getenv('WORDPRESS_DB_COLLATE') );
 
 /**
  * Authentication Unique Keys and Salts.
@@ -61,12 +61,12 @@ define( 'NONCE_SALT',       'wIF9%h{:lu70+ ,N>Q]MTS4~|.&tI$#5[c33^|13Z@c^Omy)DNK
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix = $_ENV['WORDPRESS_TABLE_PREFIX'];
+$table_prefix = getenv('WORDPRESS_TABLE_PREFIX');
 
 /**
  * Always use the URL as defined in the actual call.
  */
-define( 'WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/' );
+define( 'WP_SITEURL', 'http://' . getenv('HTTP_HOST') . '/' );
 
 /**
  * We run the WP-CRON from a CronJob
