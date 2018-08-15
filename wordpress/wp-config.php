@@ -78,6 +78,9 @@ define( 'DISABLE_WP_CRON', true );
  */
 define( 'DISALLOW_FILE_MODS', true );
 
+define( 'WP_CACHE', true );
+define( 'WPCACHEHOME', '/srv/www/wp-content/plugins/wp-super-cache/' );
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
