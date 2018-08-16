@@ -1,3 +1,3 @@
-FROM registry.kumina.nl/common/alpine-wordpress-base:1
+FROM registry.kumina.nl/common/alpine-wordpress-base
 
 COPY wordpress/ /srv/www/

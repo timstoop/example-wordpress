@@ -66,7 +66,11 @@ $table_prefix = getenv('WORDPRESS_TABLE_PREFIX');
 /**
  * Always use the URL as defined in the actual call.
  */
-define( 'WP_SITEURL', 'http://' . getenv('HTTP_HOST') . '/' );
+if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+	define( 'WP_SITEURL', 'https://' . getenv('HTTP_HOST') . '/' );
+} else {
+	define( 'WP_SITEURL', 'http://' . getenv('HTTP_HOST') . '/' );
+}
 
 /**
  * We run the WP-CRON from a CronJob
@@ -77,9 +81,6 @@ define( 'DISABLE_WP_CRON', true );
  * Running from an image, edits and upgrades would not propagate anyway.
  */
 define( 'DISALLOW_FILE_MODS', true );
-
-define( 'WP_CACHE', true );
-define( 'WPCACHEHOME', '/srv/www/wp-content/plugins/wp-super-cache/' );
 
 /* That's all, stop editing! Happy blogging. */
 
